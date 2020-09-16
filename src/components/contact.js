@@ -1,5 +1,3 @@
-const contactPage = document.createElement('div');
-
 const createContactForm = () => (
   `<div class="container contact-form">
   <div class="contact-image">
@@ -32,6 +30,7 @@ const createContactForm = () => (
 </div>`);
 
 const createContactPage = () => {
+  const contactPage = document.createElement('div');
   contactPage.insertAdjacentHTML('beforeend', createContactForm());
   return contactPage;
 };

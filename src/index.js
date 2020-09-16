@@ -1,11 +1,13 @@
 import './app.scss';
 import 'bootstrap';
-import { createNav } from './components/nav';
+import createNav from './components/nav';
 import homePage from './components/home';
 import menuPage from './components/menu';
 import contactPage from './components/contact';
 
 const main = document.querySelector('#content');
+const pageContainer = document.createElement('div');
+let currentNode;
 
 const menuList = [
   {
@@ -35,7 +37,40 @@ const menuList = [
   },
 ];
 
-main.appendChild(createNav());
-main.appendChild(homePage());
-main.appendChild(menuPage(menuList));
-main.appendChild(contactPage());
+const loadPage = () => {
+  currentNode = homePage();
+  main.appendChild(createNav());
+  pageContainer.appendChild(currentNode);
+  main.appendChild(pageContainer);
+};
+
+const changePage = (newChild) => {
+  if (newChild !== currentNode) {
+    pageContainer.replaceChild(newChild, currentNode);
+    currentNode = newChild;
+  }
+};
+
+const switchPage = () => {
+  const links = document.querySelectorAll('.nav-link');
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const { target } = e;
+      link.classList.remove('active');
+      target.classList.add('active');
+      switch (target.textContent) {
+        case 'Home':
+          changePage(homePage());
+          break;
+        case 'Menu':
+          changePage(menuPage(menuList));
+          break;
+        default:
+          changePage(contactPage());
+      }
+    });
+  });
+};
+
+loadPage();
+switchPage();

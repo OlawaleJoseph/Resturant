@@ -1,13 +1,11 @@
-const createMenuCard = ({ imgSrc, title, description }) => {
-  const card = `<div class="card m-3">
+const createMenuCard = ({ imgSrc, title, description }) => (`<div class="card m-3">
     <img class="card-img-top" src="${imgSrc}" alt="${title} dish image">
     <div class="card-body text-center">
       <h5 class="card-title">${title}</h5>
       <p class="card-text">${description}</p>
     </div>
-  </div>`;
-  return card;
-};
+  </div>`
+);
 
 const menuList = (menuArr) => {
   const menuWrapper = document.createElement('div');

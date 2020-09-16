@@ -1,7 +1,4 @@
-const home = document.createElement('div');
-home.classList.add('position-relative');
-const carousel = () => {
-  home.insertAdjacentHTML('beforeend', `<div id="carouselExampleControls" class="position-relative homepage z-1 carousel slide" data-ride="carousel">
+const carousel = () => (`<div id="carouselExampleControls" class="position-relative homepage z-1 carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="First slide">
@@ -22,9 +19,9 @@ const carousel = () => {
       <span class="sr-only">Next</span>
     </a>
   </div>`);
-};
 
-const pageText = () => {
+
+const pageText = (home) => {
   const container = document.createElement('div');
   container.classList.add('overlay', 'text-white');
   const text = document.createElement('div');
@@ -35,10 +32,12 @@ const pageText = () => {
   home.appendChild(container);
 };
 
-const createHomePgae = () => {
-  carousel();
-  pageText();
+const createHomePage = () => {
+  const home = document.createElement('div');
+  home.classList.add('position-relative');
+  home.insertAdjacentHTML('beforeend', carousel());
+  pageText(home);
   return home;
 };
 
-export default createHomePgae;
+export default createHomePage;

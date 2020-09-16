@@ -12,6 +12,15 @@ img {
   font-size: 1.5rem;
 }
 
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  transform: scale(1.2);
+}
+
 .overlay {
   position: absolute;
   top: 0;

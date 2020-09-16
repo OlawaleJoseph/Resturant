@@ -56,7 +56,7 @@ const switchPage = () => {
   links.forEach((link) => {
     link.addEventListener('click', (e) => {
       const { target } = e;
-      link.classList.remove('active');
+      links.forEach((item) => item.classList.remove('active'));
       target.classList.add('active');
       switch (target.textContent) {
         case 'Home':

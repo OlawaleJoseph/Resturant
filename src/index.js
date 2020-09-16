@@ -2,7 +2,8 @@ import './app.scss';
 import 'bootstrap';
 import { createNav } from './components/nav';
 import homePage from './components/home';
-import menu from './components/menu';
+import menuPage from './components/menu';
+import contactPage from './components/contact';
 
 const main = document.querySelector('#content');
 
@@ -36,4 +37,5 @@ const menuList = [
 
 main.appendChild(createNav());
 main.appendChild(homePage());
-main.appendChild(menu(menuList));
+main.appendChild(menuPage(menuList));
+main.appendChild(contactPage());

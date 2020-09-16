@@ -1,5 +1,50 @@
 @import "~bootstrap/scss/bootstrap";
 
-h1 {
-  color: blue;
+
+img {
+  object-fit: cover;
+}
+
+.homepage {
+  max-height: 91vh;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.welcome-text {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.carousel-inner {
+  height: 91vh;
+}
+
+.carousel-item {
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .welcome-text {
+    width: 50%;
+  }
 }

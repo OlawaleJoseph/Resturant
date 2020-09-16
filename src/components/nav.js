@@ -1,7 +1,7 @@
 const createBrand = () => {
   const brand = document.createElement('a');
   brand.classList.add('font-weight-bold', 'brand', 'logo')
-  brand.textContent = 'Brand'
+  brand.textContent = 'BelleFul'
   return brand;
 }
 

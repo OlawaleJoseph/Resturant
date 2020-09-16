@@ -1,7 +1,7 @@
 const home = document.createElement('div');
 home.classList.add('position-relative');
 const carousel = () => {
-  home.insertAdjacentHTML('beforeend' ,`<div id="carouselExampleControls" class="position-relative homepage z-1 carousel slide" data-ride="carousel">
+  home.insertAdjacentHTML('beforeend', `<div id="carouselExampleControls" class="position-relative homepage z-1 carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="First slide">
@@ -22,20 +22,23 @@ const carousel = () => {
       <span class="sr-only">Next</span>
     </a>
   </div>`);
-}
+};
 
 const pageText = () => {
   const container = document.createElement('div');
   container.classList.add('overlay', 'text-white');
   const text = document.createElement('div');
-  text.classList.add('welcome-text')
-  const headLine = `<h1>EAT WITH COMFORT</h1><p>A Comfort Food Restaurant, committed to exciting your palate</p>`;
-  text.insertAdjacentHTML('beforeend', headLine)
-  container.appendChild(text)
+  text.classList.add('welcome-text');
+  const headLine = '<h1>EAT WITH COMFORT</h1><h3>A Comfort Food Restaurant, committed to exciting your palate</h3>';
+  text.insertAdjacentHTML('beforeend', headLine);
+  container.appendChild(text);
   home.appendChild(container);
-}
+};
 
-carousel();
-pageText()
+const createHomePgae = () => {
+  carousel();
+  pageText();
+  return home;
+};
 
-export default home;
+export default createHomePgae;

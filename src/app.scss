@@ -1,6 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
 
-
 img {
   object-fit: cover;
 }
@@ -41,6 +40,10 @@ img {
 
 .carousel-item {
   max-height: 100%;
+}
+
+.card {
+  width: 18rem;
 }
 
 @media (min-width: 768px) {

@@ -22,7 +22,10 @@ To get a local copy of the repository please run the following commands on your 
 ```bash
 $ cd <folder>
 $ git clone https://github.com/OlawaleJoseph/Resturant.git
-$ cd Library
+$ cd into  the cloned repo
+$ Open a terminal and 'run npm install'
+$ Run the command npm run build
+$ Open the dist folder in the root of the app, open the index.html file witha browser(Chrome, Firefox...)
 ```
 
 ## Author
